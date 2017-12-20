@@ -59,10 +59,20 @@ def initialize() {
 
 def appTouch(evt) {
 	log.debug "appTouch: $evt"
-	theswitch.setLevel(50)
 
-    def lvl = theswitch.currentValue("level")
-    log.info("Dimmer level: ${lvl}")
+    try {
+        httpPost("http://69.156.160.185:10000/led", "params=0") { resp ->
+            log.debug "response data: ${resp.data}"
+            log.debug "response contentType: ${resp.contentType}"
+        }
+    } catch (e) {
+        log.debug "something went wrong: $e"
+    }
+
+//	theswitch.setLevel(50)
+
+//    def lvl = theswitch.currentValue("level")
+//    log.info("Dimmer level: ${lvl}")
 }
 
 def execute() {

@@ -139,12 +139,12 @@ def subscribeToEvents() {
 	}
 	if (thermostats != null) {
 		subscribe(thermostats, "temperature", genericHandler)
-		subscribe(thermostats, "heatingSetpoint", genericHandler)
-		subscribe(thermostats, "coolingSetpoint", genericHandler)
+		//subscribe(thermostats, "heatingSetpoint", genericHandler)
+		//subscribe(thermostats, "coolingSetpoint", genericHandler)
 		subscribe(thermostats, "thermostatSetpoint", genericHandler)
-		subscribe(thermostats, "thermostatMode", genericHandler)
-		subscribe(thermostats, "thermostatFanMode", genericHandler)
-		subscribe(thermostats, "thermostatOperatingState", genericHandler)
+		//subscribe(thermostats, "thermostatMode", genericHandler)
+		//subscribe(thermostats, "thermostatFanMode", genericHandler)
+		//subscribe(thermostats, "thermostatOperatingState", genericHandler)
 	}
 	if (valves != null) {
 		subscribe(valves, "contact", genericHandler)
